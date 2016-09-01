@@ -4,7 +4,7 @@ By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that 
 What is the 10 001st prime number?
 """
 
-def ListPrimes(n): # Give nth prime number
+def ListPrimes(n): # Give nth prime number list
     def IsPrime(x):
         return all(x % i for i in range(2, x //2 + 1)) # StackOverflow helped with this bc I got lazy
     
