@@ -35,7 +35,6 @@ def Sieve(maximum):
                 filtered.append([x for x in coll if x <= maximum and x not in filtered]) # Add unique values to our skip list
                 maxLength = max(maxLength, len(coll))
     return longest, maxLength
-        
-        
+
 
 print(Sieve(1000000))
