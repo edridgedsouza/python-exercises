@@ -6,7 +6,7 @@ import re
 
 def main():
     mylist = []
-    lines = input("Lines: ")
+    lines = int(input())
     operations = {
     "print" : lambda x: print(x),
     "sort" : lambda x: x.sort(),
@@ -18,9 +18,16 @@ def main():
     }    
     
     for line in range(lines):
-        command = input("Operation: ")
-        keyword = re.search("(.*?) ", command).group(1) # First word
+        command = input()
+        pattern = re.compile("\w+")
+        keyword = re.findall(pattern, command)[0] # First word
         
+        if keyword == "insert":
+            i = int(re.findall(pattern, command)[1])
+            e = int(re.findall(pattern, command)[2])
+        if keyword == "remove" or keyword == "append":
+            e = int(re.findall(pattern, command)[1])
+            
         # Now parse i and e
         
         f = operations[keyword]
