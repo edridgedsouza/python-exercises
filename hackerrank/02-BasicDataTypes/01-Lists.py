@@ -7,15 +7,16 @@ import re
 def main():
     mylist = []
     lines = int(input())
+    
     operations = {
-    "print" : lambda x: print(x),
-    "sort" : lambda x: x.sort(),
-    "reverse": lambda x: x.reverse(),
-    "pop": lambda x: x.pop(),
-    "insert": lambda x: x.insert(i, e),
-    "remove": lambda x: x.remove(e),
-    "append": lambda x: x.append(e)
-    }    
+        "print" : lambda x: print(x),
+        "sort" : lambda x: x.sort(),
+        "reverse": lambda x: x.reverse(),
+        "pop": lambda x: x.pop(),
+        "insert": lambda x: x.insert(i, e),
+        "remove": lambda x: x.remove(e),
+        "append": lambda x: x.append(e)
+        }    
     
     for line in range(lines):
         command = input()
@@ -27,8 +28,6 @@ def main():
             e = int(re.findall(pattern, command)[2])
         if keyword == "remove" or keyword == "append":
             e = int(re.findall(pattern, command)[1])
-            
-        # Now parse i and e
         
         f = operations[keyword]
         f(mylist)
