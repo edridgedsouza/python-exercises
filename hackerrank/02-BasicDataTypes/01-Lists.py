@@ -16,7 +16,7 @@ def main():
         "insert": lambda x: x.insert(i, e),
         "remove": lambda x: x.remove(e),
         "append": lambda x: x.append(e)
-        }    
+    }    
     
     for line in range(lines):
         command = input()
